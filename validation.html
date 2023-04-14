@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner{
+          width: 30%;
+          background-color: darkolivegreen;
+          margin: 0 auto;
+
+        }
+        body{
+            background-color: cadetblue;
+        }
+        h2{
+            font-size: 50PX;
+
+        }
+        input{
+            padding: 10px 50px;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="conteiner">
+      <h2>login page</h2>
+      <form  onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="enterusername"><br>
+        <p id="usernameero"></p>
+        <input type="password" name="" id="password" placeholder="enter your password"><br>
+        <p id="passerro"></p>
+        <input type="submit" value="submitdata">
+      </form>
+  </div>    
+
+  <script>
+
+     let username = document.getElementById('username');
+     let password = document.getElementById('password');
+     let done = 1
+
+   function validateForm() {
+    if(username.value == ""){
+       document.getElementById('usernameero').innerHTML = 'this fild rq'
+       done = 0
+    }
+     else if(username.value.length < 3 ){
+        document.getElementById('usernameero').innerHTML = 'min rq 3 letter'
+        done = 0
+    }
+    else{
+        document.getElementById('usernameero').innerHTML = ''
+        done = 1
+    }
+    if(password.value == ""){
+        document.getElementById('passerro').innerHTML = "must be rq"
+        done = 0
+    }
+    else{
+        document.getElementById('passerro').innerHTML = ""
+        done = 1
+    }
+     if(done){
+        return true
+     }
+     else{
+        return false
+     }
+   }
+ 
+    
+
+
+  </script>
+</body>
+</html>
